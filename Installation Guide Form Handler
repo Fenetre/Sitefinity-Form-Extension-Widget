@@ -1,0 +1,62 @@
+Fenetre.Sitefinity.FormHandler - version 1.2.1.0 Powered By Fenêtre
+
+To load and edit the project into Visual Studio, please follow the following steps:
+  1. Right click your solution in Visual Studio.
+  2. Select Add > Existing Project...
+  3. Navigate to the Fenetre.Sitefinity.Formhandler folder and select the Fenetre.Sitefinity.Formhandler.csproj file.
+  4. Add references to the following files to the Fenetre.Sitefinity.Formhandler project:
+      •	Telerik.OpenAccess.dll
+	    •	Telerik.Sitefinity.dll
+	    •	Telerik.Sitefinity.Model.dll
+	    • Telerik.Sitefinity.Services.Events.dll
+	    • Telerik.Sitefinity.Utilities.dll
+	    • Telerik.Web.UI.dll
+	 You can find these dll files in the bin folder of your Sitefinity website.
+
+To install the widgets, please follow the following steps:
+	1. Find your Sitefinity version by navigation to Administration -> Version and Licensing. 
+	2. Extract the following files from the folder corresponding with your Sitefinity version:
+	   •	Fenetre.Sitefinity.FormHandler.dll
+	   •	Fenetre.Sitefinity.Twitterfeed.dll
+	   •	LinqToTwitter.dll
+	3. Copy the extracted files to the bin directory of your Sitefinity project.
+	4. Restart your application.
+	5. The Fenêtre widgets are automatically added to the pages Toolbox; in the section “Fenêtre Add-ons”.
+
+
+Compatible with the following Sitefinity versions:
+Sitefinity 5.0.2500.0
+Sitefinity 5.0.2522.0
+Sitefinity 5.0.2800.0
+Sitefinity 5.0.2860.0
+Sitefinity 5.1.3200.0
+Sitefinity 5.1.3210.0
+Sitefinity 5.1.3270.0
+Sitefinity 5.1.3450.0
+Sitefinity 5.2.3700.0
+Sitefinity 5.2.3800.0
+Sitefinity 5.3.3900.0
+Sitefinity 5.4.4000.0
+Sitefinity 5.4.4010.0
+Sitefinity 5.4.4020.0
+Sitefinity 5.4.4040.0
+Sitefinity 6.0.4100.0
+Sitefinity 6.0.4200.0
+Sitefinity 6.0.4210.0
+Sitefinity 6.1.4300.0
+Sitefinity 6.1.4600.0
+Sitefinity 6.1.4700.0
+Sitefinity 6.2.4900.0
+Sitefinity 6.2.4910.0
+Sitefinity 6.3.5000.0
+Sitefinity 7.0.5100.0
+Sitefinity 7.1.5200.0
+Sitefinity 7.2.5320.0
+Sitefinity 7.3.5610.0
+Sitefinity 8.0.5700.0
+Sitefinity 8.0.5710.0
+Sitefinity 8.1.5800.0
+Sitefinity 8.1.5802.0
+Sitefinity 8.1.5803.0
+Sitefinity 8.1.5820.0
+Sitefinity 8.2.5900.0
