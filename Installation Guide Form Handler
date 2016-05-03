@@ -5,16 +5,16 @@ To load and edit the project into Visual Studio, please follow the following ste
   2. Select Add > Existing Project...
   3. Navigate to the Fenetre.Sitefinity.Formhandler folder and select the Fenetre.Sitefinity.Formhandler.csproj file.
   4. Add references to the following files to the Fenetre.Sitefinity.Formhandler project:
-      •	Telerik.OpenAccess.dll
-	    •	Telerik.Sitefinity.dll
-	    •	Telerik.Sitefinity.Model.dll
-	    • Telerik.Sitefinity.Services.Events.dll
-	    • Telerik.Sitefinity.Utilities.dll
-	    • Telerik.Web.UI.dll
-	 You can find these dll files in the bin folder of your Sitefinity website.
+      	• Telerik.OpenAccess.dll
+	• Telerik.Sitefinity.dll
+	• Telerik.Sitefinity.Model.dll
+	• Telerik.Sitefinity.Services.Events.dll
+	• Telerik.Sitefinity.Utilities.dll
+	• Telerik.Web.UI.dll
+  You can find these dll files in the bin folder of your Sitefinity website.
 
 To install the widgets, please follow the following steps:
-	1. Find your Sitefinity version by navigation to Administration -> Version and Licensing. 
+	1. Find your Sitefinity version by navigating to Administration -> Version and Licensing. 
 	2. Extract the following files from the folder corresponding with your Sitefinity version:
 	   •	Fenetre.Sitefinity.FormHandler.dll
 	   •	Fenetre.Sitefinity.Twitterfeed.dll
