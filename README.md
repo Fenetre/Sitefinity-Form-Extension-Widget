@@ -25,7 +25,8 @@
 
 <p>Anyone is welcome to contribute to Fen&ecirc;tre Form Extension widget.</p>
 
-<h2><strong>Changelog</strong></h2>
+<h2><strong>Releases</strong></h2>
+Sitefinity 8.2.5900.0
 
 <h2><strong>Furthermore</strong></h2>
 
