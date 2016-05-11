@@ -19,7 +19,7 @@
 
 <h2><strong>Reporting bugs</strong></h2>
 
-<p> <p><a href=https://github.com/Fenetre/Sitefinity-Form-Extension-Widget/issues> If you find an issue, please let u know here!</a> 
+<p> <p><a href=https://github.com/Fenetre/Sitefinity-Form-Extension-Widget/issues> If you find an issue, please let us know here!</a> 
 
 <h2><strong>Contributions</strong></h2>
 
