@@ -30,4 +30,4 @@
 
 <h2><strong>Furthermore</strong></h2>
 
-<p>You want to connect Mailchimp to Sitefinity CMS with an easy to install add-on? Check our website for more information.</p>
+<p>You want to connect Mailchimp to Sitefinity CMS with an easy to install add-on? <a href=https://www.fenetre.nl/producten/telerik-sitefinity-widgets/sitefinity-mailchimp-widget/>Check our website for more information.<a/></p>
