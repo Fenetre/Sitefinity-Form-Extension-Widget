@@ -15,7 +15,7 @@
 
 <h2><strong>Installation</strong></h2>
 
-<p>You can download the installation guide on our website</p>
+<p> <a href="https://github.com/Fenetre/Sitefinity-Form-Extension-Widget/blob/master/Installation%20Guide%20Form%20Handler">You can download the installation guide on Github</a></p>
 
 <h2><strong>Reporting bugs</strong></h2>
 
