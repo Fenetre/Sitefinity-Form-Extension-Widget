@@ -26,7 +26,7 @@
 <p>Anyone is welcome to contribute to Fen&ecirc;tre Form Extension widget.</p>
 
 <h2><strong>Releases</strong></h2>
-Sitefinity 8.2.5900.0
+<a href="https://github.com/Fenetre/Sitefinity-Form-Extension-Widget/blob/master/Installation%20Guide%20Form%20Handler">Check the installation guide for the latest version</a>
 
 <h2><strong>Furthermore</strong></h2>
 
