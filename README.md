@@ -15,7 +15,7 @@
 
 <h2>Installation</h2>
 
-<p> <a href="https://github.com/Fenetre/Sitefinity-Form-Extension-Widget/blob/master/Installation%20Guide%20Form%20Handler">You can download the installation guide on Github.</a></p>
+<p> <a href="https://github.com/Fenetre/Sitefinity-Form-Extension-Widget/blob/master/Installation%20Guide%20Form%20Handler">Check the installation guide for supported versions of Telerik Sitefinity and other info .</a></p>
 
 <h2>Reporting bugs</h2>
 
