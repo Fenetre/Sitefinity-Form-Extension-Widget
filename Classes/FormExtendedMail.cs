@@ -6,6 +6,9 @@ using System.Net.Mime;
 using System.Text;
 using Telerik.Microsoft.Practices.EnterpriseLibrary.Logging;
 using Telerik.Sitefinity.Configuration;
+using Telerik.Sitefinity.Services;
+using Telerik.Sitefinity.Services.Notifications;
+using Telerik.Sitefinity.Services.Notifications.Configuration;
 
 namespace Fenetre.Sitefinity.FormHandler
 {
@@ -28,29 +31,69 @@ namespace Fenetre.Sitefinity.FormHandler
       /// <returns>Returns a boolean whether the email was successfully sent</returns>
 	  public static bool SendFormHandlerEmailMessage(string fromAddresses, string toAddresses, string ccAddresses, string subject, string body, string bodyHTML, List<Attachment> attachments, string currentFormName)
 	  {
-		  if (!string.IsNullOrEmpty(fromAddresses) && !string.IsNullOrEmpty(toAddresses))
-		  {
-			  var mailServer = new SmtpClient();
-			  var mailMessage = new MailMessage();
+			if (!string.IsNullOrEmpty(fromAddresses) && !string.IsNullOrEmpty(toAddresses))
+			{
+				var mailServer = new SmtpClient();
+				var mailMessage = new MailMessage();
 
-			  var smtpSettings = Config.Get<Telerik.Sitefinity.Services.SystemConfig>().SmtpSettings;
+				var smtpSettings = Config.Get<Telerik.Sitefinity.Services.SystemConfig>().SmtpSettings;
+
+				string smtpHost;
+				string smtpUsername;
+				string smtpPassword;
+				string smtpDefaultSenderEmailAddress;
+				int smtpPort = 25;
+				int smtpTimeout = 100000;
+				bool smtpUseSSL = false;
+
+				if (smtpSettings != null && !smtpSettings.Host.IsNullOrWhitespace())
+				{
+					smtpHost = smtpSettings.Host;
+					smtpUsername = smtpSettings.UserName;
+					smtpPassword = smtpSettings.Password;
+					smtpPort = smtpSettings.Port;
+					smtpTimeout = smtpSettings.Timeout;
+					smtpDefaultSenderEmailAddress = smtpSettings.DefaultSenderEmailAddress;
+				}
+				else
+				{
+					INotificationService ns = SystemManager.GetNotificationService();
+					var parameters = new QueryParameters()
+					{
+						Skip = 0,
+						Take = 10
+					};
+
+					IEnumerable<ISenderProfile> profiles = ns.GetSenderProfiles(parameters);
+					var defaultProfile = profiles.Where(p => p.IsDefault).FirstOrDefault();
+					smtpHost = defaultProfile.CustomProperties["host"];
+					smtpUsername = defaultProfile.CustomProperties["username"];
+					smtpPassword = defaultProfile.CustomProperties["password"];
+					smtpDefaultSenderEmailAddress = defaultProfile.CustomProperties["defaultSenderEmailAddress"];
+
+
+					int.TryParse(defaultProfile.CustomProperties["port"], out smtpPort);
+					int.TryParse(defaultProfile.CustomProperties["timeout"], out smtpTimeout);
+					bool.TryParse(defaultProfile.CustomProperties["useSSL"], out smtpUseSSL);
+				}
+
 
 			  if (string.IsNullOrWhiteSpace(fromAddresses))
 			  {
-				  fromAddresses = smtpSettings.DefaultSenderEmailAddress;
+				  fromAddresses = smtpDefaultSenderEmailAddress;
 			  }
 
-			  if (!smtpSettings.Host.IsNullOrWhitespace())
+			  if (!smtpHost.IsNullOrWhitespace())
 			  {
-				  mailServer.Host = smtpSettings.Host;
-				  mailServer.Port = smtpSettings.Port;
-				  mailServer.EnableSsl = smtpSettings.EnableSSL;
-				  mailServer.Timeout = smtpSettings.Timeout;
+				  mailServer.Host = smtpHost;
+				  mailServer.Port = smtpPort;
+				  mailServer.EnableSsl = smtpUseSSL;
+				  mailServer.Timeout = smtpTimeout;
 
-				  if (!string.IsNullOrEmpty(smtpSettings.UserName))
+				  if (!string.IsNullOrEmpty(smtpUsername))
 				  {
 					  mailServer.UseDefaultCredentials = false;
-					  mailServer.Credentials = new System.Net.NetworkCredential(smtpSettings.UserName, smtpSettings.Password);
+					  mailServer.Credentials = new System.Net.NetworkCredential(smtpUsername, smtpPassword);
 				  }
 			  }
 
