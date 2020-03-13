@@ -1,6 +1,10 @@
 # Sitefinity-Form-Extension-Widget
 <p>The Sitefinity Form Extension add-on from Fen&ecirc;tre allows you to extend the default Sitefinity form handling with email.</p>
 
+<h2>Deprecated</h2>
+
+<p>This repository is not actively maintained anymore. For Sitefinity extentions and support please contact <a href="https://www.fenetre.nl">Fenêtre Online  Solutions.</a></p>
+
 <h2>Features</h2>
 
 <ul>
