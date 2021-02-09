@@ -6,6 +6,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading;
 using System.Web;
+using System.Web.UI.HtmlControls;
 using Telerik.Sitefinity;
 using Telerik.Sitefinity.Forms.Model;
 using Telerik.Sitefinity.Modules.Forms;
@@ -13,6 +14,7 @@ using Telerik.Sitefinity.Modules.Forms.Events;
 using Telerik.Sitefinity.Modules.Forms.Web.UI.Fields;
 using Telerik.Sitefinity.Pages.Model;
 using Telerik.Sitefinity.Services;
+using Telerik.Sitefinity.Web;
 using Telerik.Sitefinity.Web.UI.Fields;
 
 namespace Fenetre.Sitefinity.FormHandler
@@ -415,8 +417,20 @@ namespace Fenetre.Sitefinity.FormHandler
 				if (this.RedirectPage != null && this.RedirectPage != Guid.Empty)
 				{
 					PageNode pageNode = App.WorkWith().Page(RedirectPage).Get();
-					var url = Telerik.Sitefinity.Modules.Pages.PageExtesnsions.GetFullUrl(pageNode, Thread.CurrentThread.CurrentCulture, false, true); //.ToLowerInvariant().Replace("~/", String.Empty);
-					this.Page.Response.Redirect(url);
+					string url = Telerik.Sitefinity.Modules.Pages.PageExtesnsions.GetFullUrl(pageNode, Thread.CurrentThread.CurrentCulture, false, true); //.ToLowerInvariant().Replace("~/", String.Empty);
+					string absoluteUrl = UrlPath.ResolveUrl(url);
+
+					var clientScriptManager = this.Page.ClientScript;
+					// Define the name and type of the client scripts on the page.
+					String csname1 = "RedirectScript";
+					Type cstype = this.GetType();
+
+					// Check to see if the startup script is already registered.
+					if (!clientScriptManager.IsStartupScriptRegistered(cstype, csname1))
+					{
+						String cstext1 = string.Format("window.location.replace(\"{0}\");", absoluteUrl);
+						clientScriptManager.RegisterStartupScript(cstype, csname1, cstext1, true);
+					}
 				}
 			}
 		}
