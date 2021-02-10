@@ -12,7 +12,7 @@ using System.Web.UI;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Fenêtre bv")]
 [assembly: AssemblyProduct("Fenêtre Sitefinity Form handler")]
-[assembly: AssemblyCopyright("Copyright © 2013")]
+[assembly: AssemblyCopyright("Copyright © 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: PreApplicationStartMethod(typeof(Fenetre.Sitefinity.FormHandler.Installer), "PreApplicationStart")]
@@ -38,5 +38,5 @@ using System.Web.UI;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.1.0")]
-[assembly: AssemblyFileVersion("1.2.1.0")]
+[assembly: AssemblyVersion("1.2.2.0")]
+[assembly: AssemblyFileVersion("1.2.2.0")]
